@@ -80,8 +80,7 @@ with col5:
         st.write(f"Commence à: {message[1]}")
         st.write(message[2])
         st.write(message[3])
-    elif message == "Fichtre !":
+    else:
         st.write(message)
         st.write("Aucun événement trouvé pour cette date.") 
-    else:
         st.write("Cliquez sur un boutton !")
