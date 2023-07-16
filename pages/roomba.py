@@ -49,7 +49,7 @@ st.markdown(
 div.stButton > button:first-child {
     background-color: #eb804c;
     height: 80px;
-    width: 300px;
+    width: 100px;
     font-size: 26px;
 }
 </style>
