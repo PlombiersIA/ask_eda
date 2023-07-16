@@ -4,9 +4,10 @@ import os
 import datetime
 import requests
 from ics import Calendar, Event
+from dotenv import load_dotenv
 
-URL_TO_ICS = "https://web.isen-ouest.fr/ICS/23_24_CODE_BZH_MICROSOFT_BREST_ALT.ics"
-
+# load the Environment Variables. 
+load_dotenv()
 
 def get_the_right_room(commande: str) -> list:
     global URL_TO_ICS
