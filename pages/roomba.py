@@ -74,7 +74,7 @@ with col4:
     st.write(":calendar:")
 with col5:
     message = get_the_right_room(commande)
-    if message is not None and message != "Fichtre !":
+    if message != "Fichtre !":
         st.write(f"Date: {message[4]}")
         st.write(f"Salle(s): {message[0]}")
         st.write(f"Commence à: {message[1]}")
