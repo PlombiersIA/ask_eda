@@ -13,11 +13,12 @@ URL_TO_ICS = os.getenv('URL_TO_ICS')
 def get_the_right_room(commande: str) -> list:
     response = requests.get(URL_TO_ICS)
     calendar = Calendar(response.text)
-    date = datetime.date.today()
     if commande == "matin":
         matin_aprem = 0
+        date = datetime.date.today()
     elif commande == "aprem":
         matin_aprem = 1
+        date = datetime.date.today()
     elif commande == "demain":
         date = datetime.date.today() + datetime.timedelta(days=1)
         matin_aprem = 0    
