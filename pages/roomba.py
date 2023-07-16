@@ -46,6 +46,7 @@ st.markdown(
 """
 <style>
 div.stButton > button:first-child {
+    background-color: #eb804c;
     height: 80px;
     width: 300px;
     font-size: 26px;
