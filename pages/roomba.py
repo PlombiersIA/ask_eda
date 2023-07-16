@@ -82,6 +82,4 @@ with col5:
         st.write(message[3])
     elif message == "Fichtre !":
         st.write(message)
-    else:
-        st.write("Aucun événement trouvé pour cette date.")
-    
+        st.write("Aucun événement trouvé pour cette date.")    
