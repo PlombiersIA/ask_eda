@@ -8,9 +8,9 @@ from dotenv import load_dotenv
 
 # load the Environment Variables. 
 load_dotenv()
+URL_TO_ICS = os.getenv('URL_TO_ICS')
 
 def get_the_right_room(commande: str) -> list:
-    global URL_TO_ICS
     response = requests.get(URL_TO_ICS)
     calendar = Calendar(response.text)
     date = datetime.date.today()
