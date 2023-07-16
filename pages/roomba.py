@@ -37,7 +37,8 @@ def get_the_right_room(commande: str) -> list:
                 descript += line
         return [location, horaire, intervenant[2:], descript[2:], date.strftime("%A %d %B")]
     else:
-        return None
+        message = "Fichtre !"
+        return message
 
 
 st.title("Room Ba is now a web app !")
@@ -56,7 +57,6 @@ div.stButton > button:first-child {
 unsafe_allow_html=True,
 )
 commande = ""
-message = "Fichtre !"
 
 col1, col2, col3 = st.columns(3)
 with col1:
