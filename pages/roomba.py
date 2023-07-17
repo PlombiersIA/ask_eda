@@ -90,11 +90,11 @@ with col5:
         st.write(f"Commence à: {message[1]}")
         st.write(message[2])
         st.write(message[3])
+    if message == "Appuyez sur un boutton !":
+        st.write(message)
     if message == "Fichtre !":
         st.write(message)
         st.write("Aucun événement trouvé pour cette date.")
-    if message == "Appuyez sur un boutton !":
-        st.write(message)
 
 with col6:
     st.write(":calendar:")
