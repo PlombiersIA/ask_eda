@@ -81,19 +81,20 @@ col4, col5, col6 = st.columns(3)
 with col4:
     st.write(":calendar:")
 with col5:
-    if commande == "rien":
-        st.write(message)
+    st.write(message)
+    # if commande == "rien":
+    #     st.write(message)
         
-    if commande != "rien":
-        message = get_the_right_room(commande)
+    # if commande != "rien":
+    #     message = get_the_right_room(commande)
         
-    if message != "Fichtre !" and message !="Appuyez sur un boutton !":
-        st.write(f"Date: {message[4]}")
-        st.write(f"Salle(s): {message[0]}")
-        st.write(f"Commence à: {message[1]}")
-        st.write(message[2])
-        st.write(message[3])
+    # if message != "Fichtre !" and message !="Appuyez sur un boutton !":
+    #     st.write(f"Date: {message[4]}")
+    #     st.write(f"Salle(s): {message[0]}")
+    #     st.write(f"Commence à: {message[1]}")
+    #     st.write(message[2])
+    #     st.write(message[3])
         
-    if message == "Fichtre !":
-        st.write(message)
-        st.write("Aucun événement trouvé pour cette date.")
+    # if message == "Fichtre !":
+    #     st.write(message)
+    #     st.write("Aucun événement trouvé pour cette date.")
