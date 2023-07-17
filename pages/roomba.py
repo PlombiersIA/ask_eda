@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 # load the Environment Variables. 
 load_dotenv()
 URL_TO_ICS = os.getenv('URL_TO_ICS')
-message = "Fichtre !"
+message = "Appuyez sur un boutton !"
 
 def get_the_right_room(commande: str) -> list:
     response = requests.get(URL_TO_ICS)
@@ -86,4 +86,4 @@ with col5:
         st.write(message)
         st.write("Aucun événement trouvé pour cette date.")
     else:
-        st.write("Cliquez sur un boutton !")
+        st.write(message)
