@@ -81,8 +81,7 @@ col4, col5, col6 = st.columns(3)
 with col4:
     st.write(":calendar:")
 with col5:
-    if message == "Appuyez sur un boutton !":
-        st.write(message)
+
     if commande != "rien":
         message = get_the_right_room(commande)
     if message != "Fichtre !" and message !="Appuyez sur un boutton !":
@@ -94,6 +93,8 @@ with col5:
     if message == "Fichtre !":
         st.write(message)
         st.write("Aucun événement trouvé pour cette date.")
+    if message == "Appuyez sur un boutton !":
+        st.write(message)
 
 with col6:
     st.write(":calendar:")
