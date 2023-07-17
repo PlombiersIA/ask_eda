@@ -22,7 +22,9 @@ def get_the_right_room(commande: str) -> list:
         matin_aprem = 1
     elif commande == "demain":
         date = datetime.date.today() + datetime.timedelta(days=1)
-        matin_aprem = 0    
+        matin_aprem = 0 
+    else:
+        matin_aprem = 0
     events = [event for event in calendar.events if event.begin.date() == date]
     if events:
         events.sort(key=lambda x: x.begin.time())
