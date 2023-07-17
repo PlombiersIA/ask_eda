@@ -9,6 +9,7 @@ from dotenv import load_dotenv
 # load the Environment Variables. 
 load_dotenv()
 URL_TO_ICS = os.getenv('URL_TO_ICS')
+commande = "rien"
 message = "Appuyez sur un boutton !"
 
 def get_the_right_room(commande: str) -> list:
@@ -74,9 +75,9 @@ col4, col5, col6 = st.columns(3)
 with col4:
     st.write(":calendar:")
 with col5:
-    if commande !="matin" or commande != "aprem" or commande !="demain":
+    if commande != "rien":
         message = get_the_right_room(commande)
-    if message != "Fichtre !":
+    if message != "Fichtre !" and message !="Appuyez sur un boutton !":
         st.write(f"Date: {message[4]}")
         st.write(f"Salle(s): {message[0]}")
         st.write(f"Commence à: {message[1]}")
