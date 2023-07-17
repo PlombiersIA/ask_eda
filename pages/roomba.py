@@ -24,8 +24,11 @@ def get_the_right_room(commande: str) -> list:
         date = datetime.date.today() + datetime.timedelta(days=1)
         matin_aprem = 0 
     else:
-        matin_aprem = 0
+        message = "Fichtre !"
+        return message
+        
     events = [event for event in calendar.events if event.begin.date() == date]
+    
     if events:
         events.sort(key=lambda x: x.begin.time())
         event = events[matin_aprem]
@@ -40,9 +43,7 @@ def get_the_right_room(commande: str) -> list:
             if line.startswith("- Description :"):
                 descript += line
         return [location, horaire, intervenant[2:], descript[2:], date.strftime("%A %d %B")]
-    else:
-        message = "Fichtre !"
-        return message
+
 
 
 st.title("Room Ba is now a web app !")
@@ -80,16 +81,19 @@ col4, col5, col6 = st.columns(3)
 with col4:
     st.write(":calendar:")
 with col5:
+    if commande == "rien":
+        st.write(message)
+        
     if commande != "rien":
         message = get_the_right_room(commande)
+        
     if message != "Fichtre !" and message !="Appuyez sur un boutton !":
         st.write(f"Date: {message[4]}")
         st.write(f"Salle(s): {message[0]}")
         st.write(f"Commence à: {message[1]}")
         st.write(message[2])
         st.write(message[3])
-    elif message == "Fichtre !":
+        
+    if message == "Fichtre !":
         st.write(message)
         st.write("Aucun événement trouvé pour cette date.")
-    else:
-        st.write(message)
