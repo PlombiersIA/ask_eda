@@ -10,7 +10,7 @@ load_dotenv()
     
 
 # st.header("mistralai/Mistral-7B-v0.1 💬")
-st.header("meta-llama/Llama-2-7b-chat-hf 💬")
+st.header("OpenAssistant/oasst-sft-6-llama-30b-xor 💬")
 # Generate empty lists for generated and user.
 ## Assistant Response
 if 'generated' not in st.session_state:
@@ -40,7 +40,7 @@ def chain_setup():
     prompt = PromptTemplate(template=template, input_variables=["question"])
 
     # llm=HuggingFaceHub(repo_id="mistralai/Mistral-7B-v0.1", model_kwargs={"max_new_tokens":200})
-    llm=HuggingFaceHub(repo_id="meta-llama/Llama-2-7b-chat-hf", model_kwargs={"max_new_tokens":200})
+    llm=HuggingFaceHub(repo_id="OpenAssistant/oasst-sft-6-llama-30b-xor", model_kwargs={"max_new_tokens":400})
     llm_chain=LLMChain(
         llm=llm,
         prompt=prompt
