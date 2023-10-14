@@ -40,7 +40,7 @@ def chain_setup():
     prompt = PromptTemplate(template=template, input_variables=["question"])
 
     # llm=HuggingFaceHub(repo_id="mistralai/Mistral-7B-v0.1", model_kwargs={"max_new_tokens":200})
-    llm=HuggingFaceHub(repo_id="cmarkea/bloomz-560m-sft-chat", model_kwargs={"max_new_tokens":400})
+    llm=HuggingFaceHub(repo_id="cmarkea/bloomz-560m-sft-chat", model_kwargs={"max_new_tokens":240})
     llm_chain=LLMChain(
         llm=llm,
         prompt=prompt
