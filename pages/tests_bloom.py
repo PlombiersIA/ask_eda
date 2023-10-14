@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 
-API_URL = "https://api-inference.huggingface.co/models/cmarkea/bloomz-560m-sft-chat"
+API_URL = "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.1"
 headers = {"Authorization": "Bearer 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"}
 
 def query(payload):
@@ -14,4 +14,4 @@ prompt = st.text_input("Enter your prompt here:")
 # Send the input to the API and display the response
 if prompt:
     response = query({"inputs": prompt})
-    st.write(response["generated_text"])
+    st.write(response)
