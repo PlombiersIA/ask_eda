@@ -35,8 +35,9 @@ with input_container:
     user_input = get_text()
 
 def chain_setup():
-    template = """<|prompter|>{question}<|endoftext|>
-    <|assistant|>"""
+    # template = """<|prompter|>{question}<|endoftext|>
+    # <|assistant|>"""
+    template = """"</s>{question}<s>"""
     prompt = PromptTemplate(template=template, input_variables=["question"])
 
     # llm=HuggingFaceHub(repo_id="mistralai/Mistral-7B-v0.1", model_kwargs={"max_new_tokens":200})
