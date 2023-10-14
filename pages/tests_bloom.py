@@ -9,7 +9,8 @@ from dotenv import load_dotenv
 load_dotenv()
     
 
-st.header("Your Personal Assistant 💬")
+# st.header("mistralai/Mistral-7B-v0.1 💬")
+st.header("cmarkea/bloomz-560m-sft-chat 💬")
 # Generate empty lists for generated and user.
 ## Assistant Response
 if 'generated' not in st.session_state:
@@ -38,7 +39,8 @@ def chain_setup():
     <|assistant|>"""
     prompt = PromptTemplate(template=template, input_variables=["question"])
 
-    llm=HuggingFaceHub(repo_id="mistralai/Mistral-7B-v0.1", model_kwargs={"max_new_tokens":1000})
+    # llm=HuggingFaceHub(repo_id="mistralai/Mistral-7B-v0.1", model_kwargs={"max_new_tokens":200})
+    llm=HuggingFaceHub(repo_id="cmarkea/bloomz-560m-sft-chat", model_kwargs={"max_new_tokens":200})
     llm_chain=LLMChain(
         llm=llm,
         prompt=prompt
